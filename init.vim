@@ -32,13 +32,15 @@ set smartindent
 set smartcase
 set noswapfile
 set nobackup
+set nowritebackup
 set incsearch
+set signcolumn=yes
 set scrolloff=8
-set updatetime=40
+set updatetime=180
 set timeout timeoutlen=180 ttimeoutlen=100
 call plug#begin('~/.vim/plugged')
 Plug 'preservim/nerdtree'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}, 'branch': 'release'}
 Plug 'sheerun/vim-polyglot'
 Plug 'gruvbox-community/gruvbox'
 Plug 'sainnhe/gruvbox-material'
