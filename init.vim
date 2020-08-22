@@ -2,12 +2,12 @@ syntax on
 
 let mapleader = " "
 
-nnoremap <leader>[ <C-W>v :vert e ~/.config/nvim/init.vim <CR>
+nnoremap <leader>[ <C-W>v :vert e $HOME/.config/nvim/init.vim <CR>
 inoremap <C-h> <Left>
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 inoremap <C-l> <Right>
-nnoremap <leader>t :!cargo run<CR>
+nnoremap <leader>t :term ./cc.sh \| ./package.sh <CR> 
 nnoremap <leader>d :wincmd l<CR>
 nnoremap <leader>w :wincmd k<CR>
 nnoremap <leader>a :wincmd h<CR>
@@ -15,7 +15,11 @@ nnoremap <leader>s :wincmd j<CR>
 nnoremap <leader>b :cd %:p:h<CR>
 nnoremap <leader>+ :vertical resize +5<CR>
 nnoremap <leader>- :vertical resize -5<CR>
-nnoremap <leader>e :NERDTreeToggle<CR> :vert resize 15<CR>
+"nnoremap <leader>e :tabe %:h<CR> 
+nnoremap <leader>e :vs<CR> :cd %:p:h<CR>:wincmd l<CR> :Explore %:h<CR> <C-w><C-r> 
+nnoremap <leader>h :tabprevious<CR>
+nnoremap <leader>l :tabnext<CR>
+"nnoremap <leader>e :NERDTreeToggle<CR> :vert resize 15<CR>
 nnoremap <leader>q <C-W>q
 inoremap <C-s> <Esc> :w <CR>
 nnoremap <C-z> :u <CR>
