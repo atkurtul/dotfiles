@@ -43,7 +43,7 @@ set scrolloff=8
 set updatetime=180
 set timeout timeoutlen=180 ttimeoutlen=100
 call plug#begin('~/.vim/plugged')
-Plug 'preservim/nerdtree'
+"Plug 'preservim/nerdtree'
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}, 'branch': 'release'}
 Plug 'sheerun/vim-polyglot'
 Plug 'gruvbox-community/gruvbox'
@@ -53,13 +53,16 @@ Plug 'cocopon/iceberg.vim'
 Plug 'mhartington/oceanic-next'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'flazz/vim-colorschemes'
 Plug 'vhdirk/vim-cmake'
+Plug 'francoiscabrol/ranger.vim'
+Plug 'arakashic/chromatica.nvim'
 call plug#end()
 
+colorscheme vimbrant
+let g:chromatica#enable_at_startup=1
+let g:chromatica#libclang_path='/usr/lib/x86_64-linux-gnu/libclang-11.so.1'
 let g:cmake_project_generator="Ninja"
-let g:alduin_Shout_Dragon_Aspect = 1
-let g:alduin_Shout_Fire_Breath = 1
-colorscheme alduin
 let g:airline#extensions#tabline#enabled = 1
 function! s:check_back_space() abort
   let col = col('.') - 1
@@ -71,13 +74,13 @@ inoremap <silent><expr> <Tab>
       \ <SID>check_back_space() ? "\<Tab>" :
       \ coc#refresh()
 
-gd <Plug>(coc-definition)
-gy <Plug>(coc-type-definition)
-gi <Plug>(coc-implementation)
-gr <Plug>(coc-references)
-rr <Plug>(coc-rename)
-g[ <Plug>(coc-diagnostic-prev)
-g] <Plug>(coc-diagnostic-next)
+nmap gd <Plug>(coc-definition)
+nmap gy <Plug>(coc-type-definition)
+nmap gi <Plug>(coc-implementation)
+nmap gr <Plug>(coc-references)
+nmap rr <Plug>(coc-rename)
+nmap g[ <Plug>(coc-diagnostic-prev)
+nmap g] <Plug>(coc-diagnostic-next)
 nmap <silent> <leader>gp <Plug>(coc-diagnostic-prev-error)
 nmap <silent> <leader>gn <Plug>(coc-diagnostic-next-error)
 nnoremap <leader>cr :CocRestart
