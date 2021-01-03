@@ -2,7 +2,7 @@ syntax on
 
 let mapleader = " "
 
-nnoremap <leader>[ <C-W>v :vert e $HOME/.vimrc<CR>
+nnoremap <leader>[ <C-W>v :vert e $HOME/.config/nvim/init.vim<CR>
 inoremap <C-h> <Left>
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
@@ -16,19 +16,15 @@ nnoremap <leader>s :wincmd j<CR>
 nnoremap <leader>b :cd %:p:h<CR>
 nnoremap <leader>+ :vertical resize +5<CR>
 nnoremap <leader>- :vertical resize -5<CR>
-"nnoremap <leader>e :tabe %:h<CR> 
-"nnoremap <leader>e :vs<CR> :cd %:p:h<CR>:wincmd l<CR> :Explore %:h<CR> <C-w><C-r> 
 nnoremap <leader>e :vs<CR> :wincmd l<CR>:RangerCurrentDirectory<CR>
 nnoremap <leader>h :tabprevious<CR>
 nnoremap <leader>l :tabnext<CR>
-"nnoremap <leader>e :NERDTreeToggle<CR> :vert resize 15<CR>
 nnoremap <leader>q <C-W>q
 inoremap <C-s> <Esc> :w <CR>
 nnoremap <C-z> :u <CR>
 inoremap <C-z> <Esc>:u <CR>a
 inoremap <C-r> <Esc><C-r>a
 
-set scrolloff=8
 set relativenumber
 set noerrorbells
 set tabstop=2 softtabstop=2
@@ -41,27 +37,23 @@ set nobackup
 set nowritebackup
 set incsearch
 set signcolumn=yes
-set scrolloff=8
+set scrolloff=4
 set updatetime=180
 set timeout timeoutlen=180 ttimeoutlen=100
+
+
 call plug#begin('~/.vim/plugged')
-"Plug 'preservim/nerdtree'
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}, 'branch': 'release'}
 Plug 'sheerun/vim-polyglot'
-"Plug 'gruvbox-community/gruvbox'
-"Plug 'sainnhe/gruvbox-material'
-"Plug 'alessandroyorba/alduin'
-"Plug 'cocopon/iceberg.vim'
-"Plug 'mhartington/oceanic-next'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'flazz/vim-colorschemes'
 Plug 'vhdirk/vim-cmake'
 Plug 'francoiscabrol/ranger.vim'
-Plug 'arakashic/chromatica.nvim'
+"Plug 'arakashic/chromatica.nvim'
 Plug 'timonv/vim-cargo'
 Plug 'voldikss/vim-floaterm'
-Plug 'jeaye/color_coded'
+Plug 'atkurtul/color_coded'
 Plug 'tomasiser/vim-code-dark'
 Plug 'voldikss/vim-floaterm'
 Plug 'rhysd/vim-clang-format'
