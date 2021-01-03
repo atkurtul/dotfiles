@@ -55,13 +55,16 @@ Plug 'sheerun/vim-polyglot'
 "Plug 'mhartington/oceanic-next'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-"Plug 'flazz/vim-colorschemes'
+Plug 'flazz/vim-colorschemes'
 Plug 'vhdirk/vim-cmake'
 Plug 'francoiscabrol/ranger.vim'
-"Plug 'arakashic/chromatica.nvim'
+Plug 'arakashic/chromatica.nvim'
 Plug 'timonv/vim-cargo'
-Plug 'tomasiser/vim-code-dark'
+Plug 'voldikss/vim-floaterm'
 Plug 'jeaye/color_coded'
+Plug 'tomasiser/vim-code-dark'
+Plug 'voldikss/vim-floaterm'
+Plug 'rhysd/vim-clang-format'
 call plug#end()
 
 "colorscheme vimbrant
@@ -71,6 +74,7 @@ let g:chromatica#libclang_path='/usr/lib/x86_64-linux-gnu/libclang-11.so.1'
 let g:cmake_project_generator="Ninja"
 let g:airline#extensions#tabline#enabled = 1
 let g:asmsyntax = 'nasm'
+let g:floaterm_autoclose=2
 autocmd BufEnter *.s :setlocal filetype=nasm
 
 function! s:check_back_space() abort
@@ -83,6 +87,8 @@ inoremap <silent><expr> <Tab>
       \ <SID>check_back_space() ? "\<Tab>" :
       \ coc#refresh()
 
+nmap q` <ESC> :FloatermNew<CR>
+imap q` <ESC> :FloatermNew<CR>
 nmap gd <Plug>(coc-definition)
 nmap gy <Plug>(coc-type-definition)
 nmap gi <Plug>(coc-implementation)
