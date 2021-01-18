@@ -1,0 +1,13 @@
+---
+BasedOnStyle: Chromium
+SortIncludes: 'false'
+SortUsingDeclarations: 'false'
+SpaceBeforeCtorInitializerColon: 'false'
+SpaceBeforeInheritanceColon: 'false'
+SpaceBeforeParens: Never
+SpaceInEmptyParentheses: 'false'
+SpacesBeforeTrailingComments: '2'
+TabWidth: '2'
+UseTab: ForIndentation
+
+...
