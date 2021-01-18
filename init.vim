@@ -2,32 +2,52 @@ syntax on
 
 let mapleader = " "
 
-nnoremap <leader>[ <C-W>v :vert e $HOME/.config/nvim/init.vim<CR>
+"packadd termdebug
+"let g:termdebug_wide = 163
+"
+"function Debug_program(prog)
+"  packadd termdebug
+"  "echom a:prog
+"  Termdebug a:prog <CR>
+" <ESC>
+" windcmd h <CR> 
+" windcmd j <CR>
+"  <ESC> :q! <CR>
+"endfunction
+
+
+nnoremap <leader>[ :vsp ~/.config/nvim/init.vim<CR>
+
 inoremap <C-h> <Left>
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 inoremap <C-l> <Right>
 
 
-"nnoremap <leader>w :wincmd k<CR>
-"nnoremap <leader>a :wincmd h<CR>
-"nnoremap <leader>s :wincmd j<CR>
-"nnoremap <leader>d :wincmd l<CR>
+nnoremap <C-e> <Plug>(coc-definition)
+nnoremap <C-E> <Plug>(coc-definition)
+nnoremap <S-W> :FloatermToggle <CR>
+"nnoremap <C-r>  q
+"nnoremap <leader>r @
+"nnoremap @ <Nop>
+"nnoremap q <C-w>q
 
-nnoremap <leader>b :cd %:p:h<CR>
+
 nnoremap <leader>+ :vertical resize +5<CR>
 nnoremap <leader>- :vertical resize -5<CR>
-"nnoremap <leader>e :vs<CR> :wincmd l<CR>:term<CR>i
-nnoremap <leader>t :vs<CR> :wincmd l<CR>:term<CR>i
+nnoremap <leader>e :vsp<CR>:wincmd l<CR>:Explore<CR>
+nnoremap <leader>t :vsp<CR>:wincmd l<CR>:term <CR>
 nnoremap <leader>te :term<CR>
-tnoremap <Esc> <C-\><C-n>
-nnoremap <leader>h :tabprevious<CR>
-nnoremap <leader>l :tabnext<CR>
-nnoremap <leader>q <C-W>q
+"nnoremap <leader>h :tabprevious<CR>
+"nnoremap <leader>l :tabnext<CR>
 nnoremap <C-z> :u <CR>
 inoremap <C-z> <Esc>:u <CR>a
-inoremap <C-r> <Esc><C-r>a
 
+tnoremap <Esc> <C-\><C-n>
+"tnoremap <M-[> <Esc>
+"tnoremap <C-v><Esc> <Esc>
+
+set termguicolors
 set cursorline
 set relativenumber
 set number
@@ -49,13 +69,15 @@ set timeout timeoutlen=180 ttimeoutlen=100
 
 call plug#begin('~/.vim/plugged')
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}, 'branch': 'release'}
-"Plug 'sheerun/vim-polyglot'
+Plug 'joonty/vdebug'
+Plug 'sheerun/vim-polyglot'
 Plug 'vim-airline/vim-airline'
 Plug 'flazz/vim-colorschemes'
 Plug 'vhdirk/vim-cmake'
 Plug 'francoiscabrol/ranger.vim'
 Plug 'timonv/vim-cargo'
-"Plug 'voldikss/vim-floaterm'
+Plug 'rust-lang/rust.vim'
+Plug 'voldikss/vim-floaterm'
 Plug 'atkurtul/color_coded'
 Plug 'tomasiser/vim-code-dark'
 Plug 'voldikss/vim-floaterm'
@@ -63,13 +85,12 @@ Plug 'rhysd/vim-clang-format'
 Plug 'ghifarit53/tokyonight-vim'
 call plug#end()
 
-set termguicolors
-"let g:tokyonight_style = 'storm' "night
-"colorscheme tokyonight
+let g:tokyonight_style = 'storm' "night
+colorscheme tokyonight
 
-colorscheme codedark
+"colorscheme codedark
 let g:cmake_project_generator="Ninja"
-"let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
 let g:asmsyntax = 'nasm'
 let g:floaterm_autoclose=2
 let g:color_code_enabled=1
@@ -85,4 +106,3 @@ inoremap <silent><expr> <Tab>
       \ <SID>check_back_space() ? "\<Tab>" :
       \ coc#refresh()
 
-nmap gd <Plug>(coc-definition)
