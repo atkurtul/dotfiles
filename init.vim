@@ -6,8 +6,9 @@ let g:termdebug_wide = 163
 
 tmap <Esc> <C-\><C-n>
 
-nmap <leader>[ :vsp ~/.config/nvim/init.vim<CR>
-nmap <leader>] :vsp ~/.tmux.conf<CR>
+nmap <C-w>[ :vsp ~/.config/nvim/init.vim<CR>
+nmap <C-w>] :vsp ~/.tmux.conf<CR>
+nmap <C-w>p :vsp ~/.alacritty.yml<CR>
 
 imap <C-h> <Left>
 imap <C-j> <Down>
