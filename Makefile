@@ -7,6 +7,7 @@ all:
 	sudo cp dis /usr/local/bin/
 	mkdir -p ~/.config/nvim
 	cp init.vim ~/.config/nvim/
+	sudo curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 
 push:
