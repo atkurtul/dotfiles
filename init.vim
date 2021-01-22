@@ -6,17 +6,24 @@ let g:termdebug_wide = 163
 
 tmap <Esc> <C-\><C-n>
 
-nmap <C-w>[ :vsp ~/.config/nvim/init.vim<CR>
+nmap <C-z> :u<CR>
+imap <C-z> <ESC>:u<CR>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+inoremap {<CR> {<CR>}<ESC>O
+
+nmap <C-w>p :vsp ~/.config/nvim/init.vim<CR>
 nmap <C-w>] :vsp ~/.tmux.conf<CR>
-nmap <C-w>p :vsp ~/.alacritty.yml<CR>
+nmap <C-w>[ :vsp ~/.alacritty.yml<CR>
 
 imap <C-h> <Left>
 imap <C-j> <Down>
 imap <C-k> <Up>
 imap <C-l> <Right>
 
-nmap <silent><C-e> <Plug>(coc-definition)
-imap <silent><C-e> <ESC><C-e>
+nmap <silent><C-e> :w<CR><Plug>(coc-definition)
+imap <silent><C-e> <ESC>:w<CR><C-e>
 
 nmap <S-W> :FloatermToggle <CR>
 imap <S-W> <ESC><S-W>
@@ -24,9 +31,10 @@ tmap <S-W> <ESC><S-W>
 
 nmap <leader>+ :vertical resize +5<CR>
 nmap <leader>- :vertical resize -5<CR>
-nmap <leader>e :vsp<CR>:wincmd l<CR>:Explore<CR>
+""nmap <leader>e :vsp<CR>:wincmd l<CR>:Explore<CR>
 nmap <leader>t :vsp<CR>:wincmd l<CR>:term <CR>
 nmap <leader>te :term<CR>
+nmap <leader>e :vsp<CR>:wincmd l<CR>:RangerCurrentDirectory<CR>
 
 set termguicolors
 set cursorline
@@ -49,6 +57,7 @@ set timeout timeoutlen=180 ttimeoutlen=100
 
 call plug#begin('~/.vim/plugged')
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}, 'branch': 'release'}
+Plug 'ryuta69/coc-perl', {'do': 'yarn install && yarn build'}
 Plug 'sheerun/vim-polyglot'
 Plug 'vim-airline/vim-airline'
 Plug 'flazz/vim-colorschemes'
@@ -62,6 +71,9 @@ Plug 'tomasiser/vim-code-dark'
 Plug 'voldikss/vim-floaterm'
 Plug 'rhysd/vim-clang-format'
 Plug 'ghifarit53/tokyonight-vim'
+""Plug 'neovim/nvim-lspconfig'
+Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'bash install.sh'}
+Plug 'junegunn/fzf'
 call plug#end()
 
 let g:tokyonight_style = 'storm' "'night'
@@ -83,3 +95,8 @@ inoremap <silent><expr> <Tab>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<Tab>" :
       \ coc#refresh()
+
+
+let g:LanguageClient_serverCommands = {
+    \ 'sh': ['bash-language-server', 'start']
+    \ }
