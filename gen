@@ -1,0 +1,31 @@
+#!/usr/bin/perl
+use v5.30;
+use strict;
+use Cwd;
+
+if (@ARGV < 1) {
+  say "Usage: ccgen <files>\n";
+  exit;
+}
+
+my $fh;
+open($fh, ">", "compile_commands.json");
+
+my $dir = getcwd;
+my @ccs;
+foreach my $file (@ARGV) {
+  my $cmd = "
+  {
+    \"directory\": \"$dir\",
+    \"command\": \"/usr/bin/clang $dir/$file\",
+    \"file\": \"$dir/$file\"
+  }";
+  push(@ccs, $cmd);
+}
+
+my $out = join(",", @ccs);
+
+print $fh "[$out\n]\n";
+print "wrote $dir/compile_commands.json\n";
+
+close($fh);
