@@ -1,6 +1,6 @@
 syntax on
 
-let mapleader = " "
+let mapleader = ";"
 
 tmap <Esc> <C-\><C-n>
 
@@ -13,6 +13,8 @@ inoremap {<CR> {<CR>}<ESC>O
 
 nnoremap <C-q> q
 nnoremap q <Nop>
+
+tmap <C-w> <ESC><C-w>
 
 nmap <C-w>p :vsp ~/.config/nvim/init.vim<CR>
 nmap <C-w>] :vsp ~/.tmux.conf<CR>
@@ -33,19 +35,19 @@ tmap <S-W> <ESC><S-W>
 nmap <leader>+ :vertical resize +5<CR>
 nmap <leader>- :vertical resize -5<CR>
 "nmap <leader>e :vsp<CR>:wincmd l<CR>:Explore<CR>
-nmap <leader>t :vsp<CR>:wincmd l<CR>:term <CR>
+nmap <C-w>t :vsp<CR>:wincmd l<CR>:term<CR>i
 nmap <leader>te :term<CR>
 nmap <leader>e :vsp<CR>:wincmd l<CR>:RangerCurrentDirectory<CR>
 
 "set termguicolors
-"set cursorline
+set cursorline
 "set relativenumber
-"set number
+set number
 "set noerrorbells
 "set tabstop=2 softtabstop=2
 "set shiftwidth=2
 "set expandtab
-"set smartindent
+set smartindent
 "set smartcase
 "set noswapfile
 "set nobackup
@@ -60,7 +62,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}, 'branch': 'release'}
 Plug 'ryuta69/coc-perl', {'do': 'yarn install && yarn build'}
 Plug 'sheerun/vim-polyglot'
-Plug 'vim-airline/vim-airline'
+"Plug 'vim-airline/vim-airline'
 Plug 'flazz/vim-colorschemes'
 Plug 'vhdirk/vim-cmake'
 Plug 'francoiscabrol/ranger.vim'
@@ -78,8 +80,8 @@ call plug#end()
 
 "let g:tokyonight_style = 'storm' "'night'
 "colorscheme tokyonight
-let g:airline#extensions#tabline#enabled = 1
-"colorscheme codedark
+"let g:airline#extensions#tabline#enabled = 1
+colorscheme codedark
 
 let g:floaterm_autoclose=2
 let g:cmake_project_generator="Ninja"
