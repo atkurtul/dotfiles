@@ -1,8 +1,6 @@
 syntax on
-let mapleader = " "
 
-packadd termdebug
-let g:termdebug_wide = 163
+let mapleader = " "
 
 tmap <Esc> <C-\><C-n>
 
@@ -12,6 +10,9 @@ inoremap ( ()<left>
 inoremap [ []<left>
 inoremap { {}<left>
 inoremap {<CR> {<CR>}<ESC>O
+
+nnoremap <C-q> q
+nnoremap q <Nop>
 
 nmap <C-w>p :vsp ~/.config/nvim/init.vim<CR>
 nmap <C-w>] :vsp ~/.tmux.conf<CR>
@@ -31,29 +32,29 @@ tmap <S-W> <ESC><S-W>
 
 nmap <leader>+ :vertical resize +5<CR>
 nmap <leader>- :vertical resize -5<CR>
-""nmap <leader>e :vsp<CR>:wincmd l<CR>:Explore<CR>
+"nmap <leader>e :vsp<CR>:wincmd l<CR>:Explore<CR>
 nmap <leader>t :vsp<CR>:wincmd l<CR>:term <CR>
 nmap <leader>te :term<CR>
 nmap <leader>e :vsp<CR>:wincmd l<CR>:RangerCurrentDirectory<CR>
 
-set termguicolors
-set cursorline
-set relativenumber
-set number
-set noerrorbells
-set tabstop=2 softtabstop=2
-set shiftwidth=2
-set expandtab
-set smartindent
-set smartcase
-set noswapfile
-set nobackup
-set nowritebackup
-set incsearch
-set signcolumn=yes
-set scrolloff=4
-set updatetime=180
-set timeout timeoutlen=180 ttimeoutlen=100
+"set termguicolors
+"set cursorline
+"set relativenumber
+"set number
+"set noerrorbells
+"set tabstop=2 softtabstop=2
+"set shiftwidth=2
+"set expandtab
+"set smartindent
+"set smartcase
+"set noswapfile
+"set nobackup
+"set nowritebackup
+"set incsearch
+"set signcolumn=yes
+"set scrolloff=2
+"set updatetime=180
+"set timeout timeoutlen=180 ttimeoutlen=100
 
 call plug#begin('~/.vim/plugged')
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}, 'branch': 'release'}
@@ -71,13 +72,12 @@ Plug 'tomasiser/vim-code-dark'
 Plug 'voldikss/vim-floaterm'
 Plug 'rhysd/vim-clang-format'
 Plug 'ghifarit53/tokyonight-vim'
-""Plug 'neovim/nvim-lspconfig'
 Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'bash install.sh'}
 Plug 'junegunn/fzf'
 call plug#end()
 
-let g:tokyonight_style = 'storm' "'night'
-colorscheme tokyonight
+"let g:tokyonight_style = 'storm' "'night'
+"colorscheme tokyonight
 let g:airline#extensions#tabline#enabled = 1
 "colorscheme codedark
 
