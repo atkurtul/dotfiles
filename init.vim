@@ -62,7 +62,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}, 'branch': 'release'}
 Plug 'ryuta69/coc-perl', {'do': 'yarn install && yarn build'}
 Plug 'sheerun/vim-polyglot'
-"Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline'
 Plug 'flazz/vim-colorschemes'
 Plug 'vhdirk/vim-cmake'
 Plug 'francoiscabrol/ranger.vim'
@@ -80,7 +80,7 @@ call plug#end()
 
 "let g:tokyonight_style = 'storm' "'night'
 "colorscheme tokyonight
-"let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
 colorscheme codedark
 
 let g:floaterm_autoclose=2
