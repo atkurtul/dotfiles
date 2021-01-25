@@ -2,6 +2,16 @@ syntax on
 
 let mapleader = ";"
 
+
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
+
+
+imap <C-b> <ESC>cw
+imap ;; <ESC>
+tmap ;; <ESC>
 tmap <Esc> <C-\><C-n>
 
 nmap <C-z> :u<CR>
@@ -81,7 +91,10 @@ call plug#end()
 "let g:tokyonight_style = 'storm' "'night'
 "colorscheme tokyonight
 let g:airline#extensions#tabline#enabled = 1
+
+
 colorscheme codedark
+
 
 let g:floaterm_autoclose=2
 let g:cmake_project_generator="Ninja"
