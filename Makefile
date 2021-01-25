@@ -8,6 +8,8 @@ all:
 	sudo cp ccgen /usr/local/bin/
 	mkdir -p ~/.config/nvim
 	cp init.vim ~/.config/nvim/
+	mkdir -p ~/.emacs.d
+	cp init.el ~/.emacs.d
 
 push:
 	cp ~/.alacritty.yml ./
@@ -15,6 +17,7 @@ push:
 	cp ~/.gdbinit ./
 	cp ~/.tmux.conf ./
 	cp ~/.config/nvim/init.vim ./
+	cp ~/.emacs.d/init.el ./
 	cp /usr/local/bin/dis ./
 	cp /usr/local/bin/ccgen ./
 	git add .
