@@ -32,11 +32,12 @@ echo "Removing previous version (if found)..."
 mkdir -p ~/.local/share/nautilus-python3/extensions
 rm -f ~/.local/share/nautilus-python3/extensions/VSCodeExtension.py
 rm -f ~/.local/share/nautilus-python3/extensions/code-nautilus.py
+rm -f ~/.local/share/nautilus-python3/extensions/emacs.py
 
 # Download and install the extension
 echo "Downloading newest version..."
 wget --show-progress -q -O ~/.local/share/nautilus-python3/extensions/code-nautilus.py https://raw.githubusercontent.com/cra0zy/code-nautilus/master/code-nautilus.py
-
+wget --show-progress -q -O ~/.local/share/nautilus-python3/extensions/emacs.py https://raw.githubusercontent.com/atkurtul/dotfiles/master/emacs.py
 # Restart nautilus
 echo "Restarting nautilus..."
 nautilus -q

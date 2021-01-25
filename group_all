@@ -1,0 +1,29 @@
+#!/usr/bin/perl
+
+
+#Run this command
+#./group_all >> /path/to/alacritty.yml
+
+
+use feature qw(say);
+opendir(dir, "./themes");
+@files = readdir(dir);
+
+
+
+for my $file (@files) {
+  if ($file =~ /(\w+)\.yaml/) {
+      $theme = $1;
+      push(@names, "#colors: *$theme\n\n");
+      open($fh, "<", $file);
+
+      while($line = <$fh>){
+         $line =~ s/^colors:/\n$theme: &$theme/;
+         $all .= $line;
+      }
+      $all .= "\n\n";
+  }
+}
+
+say $all;
+say @names;
