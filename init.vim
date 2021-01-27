@@ -3,10 +3,10 @@ syntax on
 let mapleader = ";"
 
 
-noremap <Up> <Nop>
-noremap <Down> <Nop>
-noremap <Left> <Nop>
-noremap <Right> <Nop>
+" noremap <Up> <Nop>
+" noremap <Down> <Nop>
+" noremap <Left> <Nop>
+" noremap <Right> <Nop>
 
 
 imap <C-b> <ESC>cw
@@ -49,24 +49,24 @@ nmap <C-w>t :vsp<CR>:wincmd l<CR>:term<CR>i
 nmap <leader>te :term<CR>
 nmap <leader>e :vsp<CR>:wincmd l<CR>:RangerCurrentDirectory<CR>
 
-"set termguicolors
+set termguicolors
 set cursorline
-"set relativenumber
+set relativenumber
 set number
-"set noerrorbells
-"set tabstop=2 softtabstop=2
-"set shiftwidth=2
-"set expandtab
+set noerrorbells
+set tabstop=2 softtabstop=2
+set shiftwidth=2
+set expandtab
 set smartindent
-"set smartcase
-"set noswapfile
-"set nobackup
-"set nowritebackup
-"set incsearch
-"set signcolumn=yes
-"set scrolloff=2
-"set updatetime=180
-"set timeout timeoutlen=180 ttimeoutlen=100
+set smartcase
+set noswapfile
+set nobackup
+set nowritebackup
+set incsearch
+set signcolumn=yes
+set scrolloff=2
+set updatetime=180
+set timeout timeoutlen=180 ttimeoutlen=100
 
 call plug#begin('~/.vim/plugged')
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}, 'branch': 'release'}
