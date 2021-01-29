@@ -1547,7 +1547,7 @@ gotham: &gotham
 #colors: *gruvbox_light
 #colors: *taerminal
 #colors: *material_theme
-colors: *one_dark
+#colors: *one_dark
 #colors: *tango_dark
 #colors: *wombat
 #colors: *pencil_dark
@@ -1570,7 +1570,7 @@ colors: *one_dark
 #colors: *darcula
 #colors: *hyper
 #colors: *solarized_light
-#colors: *dracula
+colors: *dracula
 #colors: *thelovelace
 #colors: *argonaut
 #colors: *oceanic_next
