@@ -6,14 +6,16 @@ else
 	dotdir=$1
 fi
 
+sudo ln -sf $dotdir/dis /usr/local/bin/dis
+sudo ln -sf $dotdir/ccgen /usr/local/bin/ccgen
 ln -sf $dotdir/.alacritty.yml ~/.alacritty.yml
 ln -sf $dotdir/.clang-format.txt ~/.clang-format.txt
 ln -sf $dotdir/.gdbinit ~/.gdbinit
 ln -sf $dotdir/.tmux.conf ~/.tmux.conf
-sudo ln -sf $dotdir/dis /usr/local/bin/dis
-sudo ln -sf $dotdir/ccgen /usr/local/bin/ccgen
+
 mkdir -p ~/.config/nvim
-ln -sf $dotdir/init.vim ~/.config/nvim/
+ln -sf $dotdir/init.vim ~/.config/nvim/init.vim
+ln -sf $dotdir/init.toml ~/.SpaceVim.d/init.toml
 mkdir -p ~/.emacs.d
 ln -sf $dotdir/init.el ~/.emacs.d
 

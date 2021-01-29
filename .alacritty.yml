@@ -1,5 +1,5 @@
 font:
-  size: 14
+  size: 12
 
 schemes:
   # Tokyo Night theme, based on both:
@@ -63,13 +63,6 @@ schemes:
       white:   '0xacb0d0'
 
 
-
-# normal dark theme
-colors: *tokyo-night
-
-# "storm" uses a lighter BG color
-colors: *tokyo-night-storm
-# Colors (Solarized Dark)
 
 solarized_dark: &solarized_dark
   # Default colors
@@ -1544,94 +1537,52 @@ gotham: &gotham
     white: '0xd3ebe9'
 
 
+
+#colors: *tokyo-night
+#colors: *tokyo-night-storm
 #colors: *solarized_dark
-
 #colors: *blood_moon
-
 #colors: *Cobalt2
-
 #colors: *dark
-
 #colors: *gruvbox_light
-
 #colors: *taerminal
-
 #colors: *material_theme
-
 colors: *one_dark
-
 #colors: *tango_dark
-
 #colors: *wombat
-
 #colors: *pencil_dark
-
 #colors: *base16_default_dark
-
 #colors: *tomorrow_night_bright
-
 #colors: *terminal_app
-
 #colors: *cyber_punk_neon
-
 #colors: *nord
-
 #colors: *challenger_deep
-
 #colors: *tomorrow_night
-
 #colors: *material_theme_mod
-
 #colors: *papercolor_light
-
 #colors: *iterm
-
 #colors: *low_contrast
-
 #colors: *afterglow
-
 #colors: *pencil_light
-
 #colors: *campbell
-
 #colors: *ayu_dark
-
 #colors: *dark_pastels
-
 #colors: *darcula
-
 #colors: *hyper
-
 #colors: *solarized_light
-
 #colors: *dracula
-
 #colors: *thelovelace
-
 #colors: *argonaut
-
 #colors: *oceanic_next
-
 #colors: *gruvbox_dark
-
 #colors: *tender
-
 #colors: *falcon
-
 #colors: *remedy_dark
-
 #colors: *xterm
-
 #colors: *breeze
-
 #colors: *night
-
 #colors: *snazzy
-
 #colors: *high_contrast
-
 #colors: *storm
-
 #colors: *gotham
-
 
