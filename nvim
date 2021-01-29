@@ -13,7 +13,7 @@ let mapleader = ";"
 tmap <Esc> <C-\><C-n>
 tmap <C-w> <ESC><C-w>
 
-nmap <C-S-i> :RustFmt<CR>:%s/  / /g<CR>:nohl<CR>
+"nmap <C-S-i> :RustFmt<CR>:%s/  / /g<CR>:nohl<CR>
 nmap <C-w>p :vsp ~/.config/nvim/init.vim<CR>
 nmap <C-w>[ :vsp ~/.SpaceVim.d/init.toml<CR>
 nmap <C-w>] :vsp ~/.alacritty.yml<CR>
