@@ -1,5 +1,24 @@
 #!/usr/bin/bash
 
+sudo apt install \
+	galternatives\
+	gnome-tweaks\
+	neofetch\
+	build-essential\
+	git cmake clang clangd ninja-build\
+	libllvm11 curl\
+	neovim gnome-software\
+  libxcb1-dev libxcb-render0-dev libxcb-xfixes0-dev libxcb-shape0-dev libfontconfig-dev\
+  nodejs nasm ocaml ghc\
+  -y
+
+curl -sLf https://spacevim.org/install.sh | bash
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+~/.cargo/bin/cargo install alacritty
+sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator ~/.cargo/bin/alacritty 100
+
+sudo apt purge libxcb1-dev libxcb-render0-dev libxcb-xfixes0-dev libxcb-shape0-dev libfontconfig-dev snapd -y
+
 emacs=emacs
 nvim=nvim
 svim=svim
@@ -17,8 +36,25 @@ ln -sf $dotdir/.tmux.conf ~/.tmux.conf
 
 mkdir -p ~/.config/nvim
 ln -sf $dotdir/$nvim ~/.config/nvim/init.vim
+mkdir -p ~/.SpaceVim.d
 ln -sf $dotdir/$svim ~/.SpaceVim.d/init.toml
-
 mkdir -p ~/.emacs.d
 ln -sf $dotdir/emacs ~/.emacs.d/init.el
 
+mkdir -p ~/.themes
+mkdir -p ~/.icons
+git clone https://github.com/dracula/gtk.git
+mv gtk ~/.themes/Dracula
+
+wget https://github.com/dracula/gtk/files/5214870/Dracula.zip
+unzip Dracula.zip
+mv Dracula ~/.icons
+rm Dracula.zip
+rm -rf Dracula
+rm -rf gtk
+gsettings set org.gnome.desktop.interface gtk-theme "Dracula"
+gsettings set org.gnome.desktop.wm.preferences theme "Dracula"
+gsettings set org.gnome.desktop.interface icon-theme "Dracula"
+
+cd ~/.SpaceVim/bundle/vimproc.vim
+make

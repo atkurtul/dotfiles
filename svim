@@ -85,6 +85,4 @@ name = "lang#haskell"
 [[layers]]
 name = "lang#sh"
 [[layers]]
-name = "lang#typescript"
-[[layers]]
 name = "lang#xml"
