@@ -21,7 +21,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ~/.cargo/bin/cargo install alacritty
 sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator ~/.cargo/bin/alacritty 100
 
-sudo apt purge libxcb1-dev libxcb-render0-dev libxcb-xfixes0-dev libxcb-shape0-dev libfontconfig-dev snapd -y
+sudo apt purge snapd -y
 
 emacs=emacs
 nvim=nvim
