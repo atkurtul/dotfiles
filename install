@@ -1,5 +1,7 @@
 #!/usr/bin/bash
 
+gsettings set org.gnome.desktop.peripherals.mouse accel-profile flat
+
 sudo apt install \
 	galternatives\
 	gnome-tweaks\
@@ -11,6 +13,8 @@ sudo apt install \
   libxcb1-dev libxcb-render0-dev libxcb-xfixes0-dev libxcb-shape0-dev libfontconfig-dev\
   nodejs nasm ocaml ghc\
   -y
+
+git config --global credential.helper "cache --timeout=999999999"
 
 curl -sLf https://spacevim.org/install.sh | bash
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
