@@ -1,5 +1,11 @@
 #!/usr/bin/bash
 
+if [[ -z $1 ]]; then
+	dotdir=~/dotfiles	
+else
+	dotdir=$1
+fi
+
 gsettings set org.gnome.desktop.peripherals.mouse accel-profile flat
 
 sudo apt install \
@@ -11,12 +17,30 @@ sudo apt install \
 	libllvm11 curl\
 	neovim gnome-software\
   libxcb1-dev libxcb-render0-dev libxcb-xfixes0-dev libxcb-shape0-dev libfontconfig-dev\
-  nodejs nasm ocaml ghc\
+  nodejs nasm ocaml\
+  libxss1 libappindicator1 libindicator7\
   -y
+
+
+if ! [ -x "$(command -v google-chrome)" ]; then
+  wget -O chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+  sudo apt install ./chrome.deb
+  rm ./chrome.deb
+fi
+
+
+if ! [ -x "$(command -v discord)" ]; then
+  wget -O discord.deb "https://discordapp.com/api/download?platform=linux&format=deb"
+  sudo apt install ./discord.deb
+  rm ./discord.deb
+fi
+
+
 
 git config --global credential.helper "cache --timeout=999999999"
 git clone https://github.com/atkurtul/dotfiles
 cd dotfiles
+
 
 curl -sLf https://spacevim.org/install.sh | bash
 curl https://sh.rustup.rs -sSf | sh -s -- -y
@@ -29,11 +53,6 @@ emacs=emacs
 nvim=nvim
 svim=svim
 
-if [[ -z $1 ]]; then
-	dotdir=~/dotfiles	
-else
-	dotdir=$1
-fi
 
 ln -sf $dotdir/.alacritty.yml ~/.alacritty.yml
 ln -sf $dotdir/.clang-format.txt ~/.clang-format.txt
