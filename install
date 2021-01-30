@@ -19,7 +19,7 @@ git clone https://github.com/atkurtul/dotfiles
 cd dotfiles
 
 curl -sLf https://spacevim.org/install.sh | bash
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+curl https://sh.rustup.rs -sSf | sh -s -- -y
 ~/.cargo/bin/cargo install alacritty
 sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator ~/.cargo/bin/alacritty 100
 
