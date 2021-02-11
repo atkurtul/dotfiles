@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-
+dotdir=""
 if [[ -z $1 ]]; then
 	dotdir="$HOME/dotfiles"
 else
