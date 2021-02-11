@@ -1554,7 +1554,7 @@ gotham: &gotham
 #colors: *base16_default_dark
 #colors: *tomorrow_night_bright
 #colors: *terminal_app
-#colors: *cyber_punk_neon
+colors: *cyber_punk_neon
 #colors: *nord
 #colors: *challenger_deep
 #colors: *tomorrow_night
@@ -1570,7 +1570,7 @@ gotham: &gotham
 #colors: *darcula
 #colors: *hyper
 #colors: *solarized_light
-colors: *dracula
+#colors: *dracula
 #colors: *thelovelace
 #colors: *argonaut
 #colors: *oceanic_next
