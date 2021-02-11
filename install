@@ -84,4 +84,4 @@ gsettings set org.gnome.desktop.interface icon-theme "Dracula"
 cd ~/.SpaceVim/bundle/vimproc.vim
 make
 
-echo "source $dotir/init.sh" >> ~/.bashrc
+echo "source $dotdir/init.sh" >> ~/.bashrc
