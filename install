@@ -18,6 +18,7 @@ sudo apt install \
   libxcb1-dev libxcb-render0-dev libxcb-xfixes0-dev libxcb-shape0-dev libfontconfig-dev\
   nodejs nasm ocaml\
   libxss1 libappindicator1 libindicator7\
+  vulkan-validationlayers-dev vulkan-utils libvulkan-dev libglfw3-dev libassimp-dev
   -y
 
 
