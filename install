@@ -48,10 +48,6 @@ sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emula
 
 sudo apt purge snapd -y
 
-emacs=emacs
-nvim=nvim
-svim=svim
-
 
 ln -sf $dotdir/.alacritty.yml ~/.alacritty.yml
 ln -sf $dotdir/.clang-format.txt ~/.clang-format.txt
@@ -59,11 +55,11 @@ ln -sf $dotdir/.gdbinit ~/.gdbinit
 ln -sf $dotdir/.tmux.conf ~/.tmux.conf
 
 mkdir -p ~/.config/nvim
-ln -sf $dotdir/$nvim ~/.config/nvim/init.vim
+ln -sf $HOME/dotfiles/nvim ~/.config/nvim/init.vim
 mkdir -p ~/.SpaceVim.d
-ln -sf $dotdir/$svim ~/.SpaceVim.d/init.toml
+ln -sf $HOME/dotfiles/svim ~/.SpaceVim.d/init.toml
 mkdir -p ~/.emacs.d
-ln -sf $dotdir/emacs ~/.emacs.d/init.el
+ln -sf $HOME/dotfiles/emacs ~/.emacs.d/init.el
 
 mkdir -p ~/.themes
 mkdir -p ~/.icons
@@ -83,4 +79,4 @@ gsettings set org.gnome.desktop.interface icon-theme "Dracula"
 cd ~/.SpaceVim/bundle/vimproc.vim
 make
 
-echo "source $dotdir/init.sh" >> ~/.bashrc
+echo "source $HOME/dotfiles/init.sh" >> ~/.bashrc
