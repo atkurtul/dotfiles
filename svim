@@ -35,10 +35,14 @@ name = 'autocomplete'
 auto_completion_tab_key_behavior = "smart"
 auto_completion_return_key_behavior = "nil"
 auto_completion_complete_with_key_sequence_delay = 0.1
+
 [[layers]]
 name = 'shell'
 default_position = 'bottom'
 default_height = 30
+
+
+[[layers]]
 name = "colorscheme"
 
 [[layers]]
@@ -53,9 +57,6 @@ repo="voldikss/vim-floaterm"
 
 [[custom_plugins]]
 repo="vim-airline/vim-airline"
-
-[[custom_plugins]]
-repo="dracula/vim"
 
 [[layers]]
 name = "format"
@@ -72,8 +73,6 @@ name = "lang#ocaml"
 [[layers]]
 name = "lang#lisp"
 [[layers]]
-name = "lang#javascript"
-[[layers]]
 name = "lang#c"
 [[layers]]
 name = "lang#assembly"
@@ -83,5 +82,3 @@ name = "lang#extra"
 name = "lang#haskell"
 [[layers]]
 name = "lang#sh"
-[[layers]]
-name = "lang#xml"
