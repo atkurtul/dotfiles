@@ -17,7 +17,7 @@ sudo apt install \
 	neofetch\
 	build-essential\
 	git cmake clang clangd ninja-build\
-	libllvm11 curl\
+	clang-format libllvm11 curl\
 	neovim gnome-software\
   libxcb1-dev libxcb-render0-dev libxcb-xfixes0-dev libxcb-shape0-dev libfontconfig-dev\
   nodejs nasm ocaml\
