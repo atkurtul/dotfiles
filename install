@@ -23,7 +23,8 @@ sudo apt install \
   nodejs nasm ocaml\
   libxss1 libappindicator1 libindicator7\
   libglfw3-dev libassimp-dev\
-  vulkan-sdk autoconf libtool
+  vulkan-sdk autoconf libtool\
+  gcc-multilib g++-multilib\
   -y
 
 
