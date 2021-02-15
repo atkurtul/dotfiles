@@ -1541,13 +1541,13 @@ gotham: &gotham
 #colors: *tokyo-night
 #colors: *tokyo-night-storm
 #colors: *solarized_dark
-#colors: *blood_moon
+colors: *blood_moon
 #colors: *Cobalt2
 #colors: *dark
 #colors: *gruvbox_light
 #colors: *taerminal
 #colors: *material_theme
-colors: *one_dark
+#colors: *one_dark
 #colors: *tango_dark
 #colors: *wombat
 #colors: *pencil_dark

@@ -62,8 +62,8 @@
 
 (load-theme 'vscode-dark-plus)
 
-(use-package lsp-mode)
-(use-package lsp-ui)
+;;(use-package lsp-mode)
+;;(use-package lsp-ui)
 ;;(use-package company-lsp
 ;; :ensure t
 ;;  :commands company-lsp
