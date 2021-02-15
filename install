@@ -12,19 +12,19 @@ sudo wget -qO /etc/apt/sources.list.d/lunarg-vulkan-1.2.162-focal.list https://p
 sudo apt update
 
 sudo apt install \
-	galternatives\
-	gnome-tweaks\
-	neofetch\
-	build-essential\
-	git cmake clang clangd ninja-build\
-	clang-format libllvm11 curl\
-	neovim gnome-software\
-  libxcb1-dev libxcb-render0-dev libxcb-xfixes0-dev libxcb-shape0-dev libfontconfig-dev\
-  nodejs nasm ocaml\
-  libxss1 libappindicator1 libindicator7\
-  libglfw3-dev libassimp-dev\
-  vulkan-sdk autoconf libtool\
-  gcc-multilib g++-multilib\
+	galternatives \
+	gnome-tweaks \
+	neofetch \
+	build-essential \
+	git cmake clang clangd ninja-build \
+	clang-format libllvm11 curl \
+	neovim gnome-software \
+  libxcb1-dev libxcb-render0-dev libxcb-xfixes0-dev libxcb-shape0-dev libfontconfig-dev \
+  nodejs nasm ocaml \
+  libxss1 libappindicator1 libindicator7 \
+  libglfw3-dev libassimp-dev \
+  vulkan-sdk autoconf libtool \
+  gcc-multilib g++-multilib \
   -y
 
 

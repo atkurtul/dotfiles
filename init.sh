@@ -10,6 +10,7 @@ export PATH="$PATH:~/.local/bin:~/dotfiles/scripts"
 export VISUAL=nvim
 export EDITOR=nvim
 
+
 function pushfast() {
   if [[ -z $1 ]]; then
   	msg="push"
