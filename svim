@@ -58,6 +58,9 @@ repo="voldikss/vim-floaterm"
 [[custom_plugins]]
 repo="vim-airline/vim-airline"
 
+[[custom_plugins]]
+repo="Tetralux/odin.vim.git"
+
 [[layers]]
 name = "format"
 enable = false

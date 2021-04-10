@@ -61,6 +61,8 @@ ln -sf $dotdir/.clang-format.txt ~/.clang-format.txt
 ln -sf $dotdir/.gdbinit ~/.gdbinit
 ln -sf $dotdir/.tmux.conf ~/.tmux.conf
 
+sudo ln -sf $HOME/dotfiles/scripts/ccgen /usr/local/bin/ccgen
+sudo ln -sf $HOME/dotfiles/scripts/dis /usr/local/bin/dis
 mkdir -p ~/.config/nvim
 ln -sf $HOME/dotfiles/nvim ~/.config/nvim/init.vim
 mkdir -p ~/.SpaceVim.d

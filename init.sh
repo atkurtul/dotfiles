@@ -5,7 +5,7 @@ alias modx='chmod +x'
 alias v=vim
 
 export LS_COLORS="$LS_COLORS:ow=0;34:"
-export PATH="$PATH:~/.local/bin:~/dotfiles/scripts"
+export PATH="$PATH:~/.local/bin"
 
 
 export VISUAL=nvim

@@ -37,9 +37,11 @@ nmap <C-l> w
 nmap <silent><C-e> <Plug>(coc-definition)
 imap <silent><C-e> <ESC><C-e>
 
-nmap <S-W> :FloatermToggle <CR>
-imap <S-W> <ESC><S-W>
-tmap <S-W> <ESC><S-W>
+nmap <C-1> :FloatermToggle <CR>
+imap <C-1> <ESC><C-1>
+tmap <C-1> <ESC><C-1>
+
+;;
 
 nmap <leader>4 :vertical resize +5<CR>
 nmap <leader>3 :vertical resize -5<CR>
