@@ -6,11 +6,17 @@ alias v=vim
 
 export LS_COLORS="$LS_COLORS:ow=0;34:"
 export PATH="$PATH:~/.local/bin"
+export PATH="$PATH:~/dotfiles/scripts"
 
 
 export VISUAL=nvim
 export EDITOR=nvim
 
+
+function gsave() {
+  git add .
+  git commit -m "save"
+}
 
 function pushfast() {
   if [[ -z $1 ]]; then

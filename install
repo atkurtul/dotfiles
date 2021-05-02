@@ -63,6 +63,9 @@ ln -sf $dotdir/.tmux.conf ~/.tmux.conf
 
 sudo ln -sf $HOME/dotfiles/scripts/ccgen /usr/local/bin/ccgen
 sudo ln -sf $HOME/dotfiles/scripts/dis /usr/local/bin/dis
+sudo ln -sf $HOME/dotfiles/scripts/rstr /usr/local/bin/rstr
+sudo ln -sf $HOME/dotfiles/scripts/rrexpr /usr/local/bin/rrexpr
+
 mkdir -p ~/.config/nvim
 ln -sf $HOME/dotfiles/nvim ~/.config/nvim/init.vim
 mkdir -p ~/.SpaceVim.d

@@ -1,0 +1,26 @@
+#!/usr/bin/perl
+
+if(!(@ARGV[0])) {
+  print "Invalid size\n";
+  exit;
+}
+
+sub clmp {
+  (my $c) = @_;
+  $c %= 127;
+  if($c < 32){
+    $c += 32;
+  }
+  $c
+}
+
+sub rstr {
+  (my $l) = @_;
+  $l = "$l";
+  my $str = pack "C*", map { clmp $_ } unpack "C*", `head -c $l /dev/urandom`;
+  while($str =~ s/[\[\-+?*\]\{\}\(\)|\\wd]/@{[unpack "C", clmp rand]}/g) {}
+  $str
+}
+
+$str = rstr @ARGV[0];
+print "$str\n";

@@ -10,7 +10,6 @@ opendir(dir, "./themes");
 @files = readdir(dir);
 
 
-
 for my $file (@files) {
   if ($file =~ /(\w+)\.yaml/) {
       $theme = $1;

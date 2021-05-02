@@ -11,8 +11,8 @@
 # set spacevim theme. by default colorscheme layer is not loaded,
 # if you want to use more colorscheme, please load the colorscheme
 # layer
-colorscheme = "onedark"
-colorscheme_bg = "dark"
+# colorscheme = "onedark"
+# colorscheme_bg = "dark"
 # Disable guicolors in basic mode, many terminal do not support 24bit
 # true colors
 enable_guicolors = true
@@ -40,7 +40,6 @@ auto_completion_complete_with_key_sequence_delay = 0.1
 name = 'shell'
 default_position = 'bottom'
 default_height = 30
-
 
 [[layers]]
 name = "colorscheme"
@@ -81,7 +80,5 @@ name = "lang#c"
 name = "lang#assembly"
 [[layers]]
 name = "lang#extra"
-[[layers]]
-name = "lang#haskell"
 [[layers]]
 name = "lang#sh"
