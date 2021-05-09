@@ -49,8 +49,8 @@ nmap <leader>3 :vertical resize -5<CR>
 syntax on
 set guioptions=
 set guicursor=
-"set termguicolors
-"set cursorline
+set termguicolors
+set cursorline
 set relativenumber
 set number
 set noerrorbells
@@ -67,7 +67,7 @@ set incsearch
 set signcolumn=yes
 set scrolloff=2
 set updatetime=200
-set timeout timeoutlen=200
+set timeout timeoutlen=250
 
 
 call plug#begin('~/.vim/plugged')
