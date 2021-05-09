@@ -1,12 +1,15 @@
+let mapleader = " "
 
-execute 'source' fnamemodify(expand('<sfile>'), ':h').'/main.vim'
-
-let mapleader = ";"
+set completeopt=menu,longest
 
 tmap <Esc> <C-\><C-n>
 tmap <C-w> <ESC><C-w>
 
-"nmap <C-S-i> :RustFmt<CR>:%s/  / /g<CR>:nohl<CR>
+nmap <leader>q :NextColorScheme<CR>:colorscheme<CR>
+nmap <leader>e :PrevColorScheme<CR>:colorscheme<CR>
+nmap <leader>r :RandomColorScheme<CR>:colorscheme<CR>
+
+nmap <C-i>   :RustFmt<CR>:%s/  / /g<CR>:nohl<CR>
 nmap <C-w>p :vsp ~/.config/nvim/init.vim<CR>
 nmap <C-w>[ :vsp ~/.SpaceVim.d/init.toml<CR>
 nmap <C-w>] :vsp ~/.alacritty.yml<CR>
@@ -16,43 +19,46 @@ imap <C-j> <Down>
 imap <C-k> <Up>
 imap <C-l> <Right>
 
-
 nmap <C-Down> }
 nmap <C-Up>   {
-
 
 nmap <C-h> b
 nmap <C-j> 4j
 nmap <C-k> 4k
 nmap <C-l> w
 
+noremap! <C-BS> <C-w>
+noremap! <C-h> <C-w>
+imap <C-Del> X<Esc>dwi
+nmap <C-Del> X<Esc>dw
 
 nmap <silent><C-e> <Plug>(coc-definition)
 imap <silent><C-e> <ESC><C-e>
 
-nmap <leader-t> :FloatermToggle <CR>
-imap <leader-t> <ESC><leader-t>
-tmap <leader-t> <ESC><leader-t>
-;;
+nmap <C-w>t :vsp<CR>:wincmd l<CR>:term<CR>i
+nmap <C-w>e :vsp<CR>:wincmd l<CR>:Explore<CR>
+
+
+nmap <C-w>t :FloatermToggle <CR>
+imap <C-w>t <ESC><C-w>t
+tmap <C-w>t <ESC><C-w>t
 
 nmap <leader>4 :vertical resize +5<CR>
 nmap <leader>3 :vertical resize -5<CR>
-nmap <C-w>e :vsp<CR>:wincmd l<CR>:Explore<CR>
-nmap <C-w>t :vsp<CR>:wincmd l<CR>:term<CR>i
-nmap <leader>te :term<CR>
-
 
 syntax on
 set guioptions=
 set guicursor=
-set termguicolors
-set cursorline
+"set termguicolors
+"set cursorline
 set relativenumber
+set number
 set noerrorbells
 set tabstop=2 softtabstop=2
 set shiftwidth=2
 set expandtab
 set smartindent
+
 set smartcase
 set noswapfile
 set nobackup
@@ -61,10 +67,39 @@ set incsearch
 set signcolumn=yes
 set scrolloff=2
 set updatetime=200
-set timeout timeoutlen=180 ttimeoutlen=100
+set timeout timeoutlen=200
+
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}, 'branch': 'release'}
+Plug 'ryuta69/coc-perl', {'do': 'yarn install && yarn build'}
+Plug 'sheerun/vim-polyglot'
+Plug 'vim-airline/vim-airline'
+Plug 'flazz/vim-colorschemes'
+Plug 'vhdirk/vim-cmake'
+Plug 'francoiscabrol/ranger.vim'
+Plug 'timonv/vim-cargo'
+Plug 'rust-lang/rust.vim'
+Plug 'voldikss/vim-floaterm'
+
+"Plug 'atkurtul/color_coded'
+Plug 'tomasiser/vim-code-dark'
+Plug 'voldikss/vim-floaterm'
+Plug 'rhysd/vim-clang-format'
+Plug 'ghifarit53/tokyonight-vim'
+Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'bash install.sh'}
+Plug 'junegunn/fzf'
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-colorscheme-switcher'
+
+call plug#end()
+
+"colorscheme gruvbox
 
 let g:airline#extensions#tabline#enabled = 1
 let g:floaterm_autoclose=2
 let g:cmake_project_generator="Ninja"
 let g:asmsyntax = 'nasm'
 autocmd BufEnter *.s :setlocal filetype=nasm
+

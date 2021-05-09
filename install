@@ -88,6 +88,10 @@ gsettings set org.gnome.desktop.interface gtk-theme "Dracula"
 gsettings set org.gnome.desktop.wm.preferences theme "Dracula"
 gsettings set org.gnome.desktop.interface icon-theme "Dracula"
 
+gsettings set org.gnome.nautilus.preferences recursive-search 'never'
+#gsettings set org.gnome.desktop.default-applications.terminal exec x-terminal-emulator
+
+
 cd ~/.SpaceVim/bundle/vimproc.vim
 make
 
