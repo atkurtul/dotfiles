@@ -5,6 +5,7 @@ if [[ -z $1 ]]; then
 	dotdir=$1
 fi
 
+gsettings set org.gnome.nautilus.preferences recursive-search 'never'
 gsettings set org.gnome.desktop.peripherals.mouse accel-profile flat
 
 wget -qO - https://packages.lunarg.com/lunarg-signing-key-pub.asc | sudo apt-key add -
@@ -88,7 +89,6 @@ gsettings set org.gnome.desktop.interface gtk-theme "Dracula"
 gsettings set org.gnome.desktop.wm.preferences theme "Dracula"
 gsettings set org.gnome.desktop.interface icon-theme "Dracula"
 
-gsettings set org.gnome.nautilus.preferences recursive-search 'never'
 #gsettings set org.gnome.desktop.default-applications.terminal exec x-terminal-emulator
 
 
