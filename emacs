@@ -1,3 +1,4 @@
+
 ` 
 (package-initialize)
 
@@ -62,7 +63,7 @@
         ))
 ;;(package-refresh-contents)
 
-(load-theme 'vscode-dark-plus)
+(load-theme 'doom-dark+)
 
 ;;(use-package lsp-mode)
 ;;(use-package lsp-ui)

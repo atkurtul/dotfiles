@@ -82,6 +82,7 @@ Plug 'francoiscabrol/ranger.vim'
 Plug 'timonv/vim-cargo'
 Plug 'rust-lang/rust.vim'
 Plug 'voldikss/vim-floaterm'
+
 "Plug 'atkurtul/color_coded'
 Plug 'tomasiser/vim-code-dark'
 Plug 'voldikss/vim-floaterm'
@@ -102,15 +103,5 @@ let g:floaterm_autoclose=2
 let g:cmake_project_generator="Ninja"
 let g:asmsyntax = 'nasm'
 autocmd BufEnter *.s :setlocal filetype=nasm
-
-
-nmap <C-M> :redir! > ~/map<CR> :map<CR><S-G>G :redir END<CR>
-
-
-function! Dump()
-  redir! > ~/map
-  :map<CR><S-G>
-  redir END
-endfunction
 
 autocmd filetype rust nmap <C-g> :CargoRun<CR>
