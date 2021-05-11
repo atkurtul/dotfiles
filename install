@@ -19,15 +19,12 @@ sudo apt install \
 	build-essential \
 	git cmake clang clangd ninja-build \
 	clang-format libllvm11 curl \
-	neovim gnome-software \
-  libxcb1-dev libxcb-render0-dev libxcb-xfixes0-dev libxcb-shape0-dev libfontconfig-dev \
-  nodejs nasm ocaml \
-  libxss1 libappindicator1 libindicator7 \
-  libglfw3-dev libassimp-dev \
+	neovim nodejs nasm ocaml \
   vulkan-sdk autoconf libtool \
   gcc-multilib g++-multilib \
-  -y
-
+  -y 
+  #libxcb1-dev libxcb-render0-dev libxcb-xfixes0-dev libxcb-shape0-dev libfontconfig-dev \
+  #libxss1 libappindicator1 libindicator7 libglfw3-dev libassimp-dev \
 
 if ! [ -x "$(command -v google-chrome)" ]; then
   wget -O chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
@@ -51,11 +48,10 @@ cd dotfiles
 
 curl -sLf https://spacevim.org/install.sh | bash
 curl https://sh.rustup.rs -sSf | sh -s -- -y
-~/.cargo/bin/cargo install alacritty
-sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator ~/.cargo/bin/alacritty 100
+#~/.cargo/bin/cargo install alacritty
+#sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator ~/.cargo/bin/alacritty 100
 
-sudo apt purge snapd -y
-
+#sudo apt purge snapd -y
 
 ln -sf $dotdir/.alacritty.yml ~/.alacritty.yml
 ln -sf $dotdir/.clang-format.txt ~/.clang-format.txt
@@ -69,30 +65,30 @@ sudo ln -sf $HOME/dotfiles/scripts/rrexpr /usr/local/bin/rrexpr
 
 mkdir -p ~/.config/nvim
 ln -sf $HOME/dotfiles/nvim ~/.config/nvim/init.vim
-mkdir -p ~/.SpaceVim.d
-ln -sf $HOME/dotfiles/svim ~/.SpaceVim.d/init.toml
+#mkdir -p ~/.SpaceVim.d
+#ln -sf $HOME/dotfiles/svim ~/.SpaceVim.d/init.toml
 mkdir -p ~/.emacs.d
 ln -sf $HOME/dotfiles/emacs ~/.emacs.d/init.el
 
 mkdir -p ~/.themes
 mkdir -p ~/.icons
-git clone https://github.com/dracula/gtk.git
-mv gtk ~/.themes/Dracula
+#git clone https://github.com/dracula/gtk.git
+#mv gtk ~/.themes/Dracula
 
-wget https://github.com/dracula/gtk/files/5214870/Dracula.zip
-unzip Dracula.zip
-mv Dracula ~/.icons
-rm Dracula.zip
-rm -rf Dracula
-rm -rf gtk
-gsettings set org.gnome.desktop.interface gtk-theme "Dracula"
-gsettings set org.gnome.desktop.wm.preferences theme "Dracula"
-gsettings set org.gnome.desktop.interface icon-theme "Dracula"
+#Wget https://github.com/dracula/gtk/files/5214870/Dracula.zip
+#Unzip Dracula.zip
+#Mv Dracula ~/.icons
+#Rm Dracula.zip
+#Rm -rf Dracula
+#Rm -rf gtk
+#Gsettings set org.gnome.desktop.interface gtk-theme "Dracula"
+#Gsettings set org.gnome.desktop.wm.preferences theme "Dracula"
+#Gsettings set org.gnome.desktop.interface icon-theme "Dracula"
 
 #gsettings set org.gnome.desktop.default-applications.terminal exec x-terminal-emulator
 
 
-cd ~/.SpaceVim/bundle/vimproc.vim
-make
+#cd ~/.SpaceVim/bundle/vimproc.vim
+#make
 
 echo "source $HOME/dotfiles/init.sh" >> ~/.bashrc
