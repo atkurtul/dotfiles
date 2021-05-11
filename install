@@ -18,7 +18,7 @@ sudo apt install \
 	neofetch \
 	build-essential \
 	git cmake clang clangd ninja-build \
-	clang-format libllvm11 curl \
+	clang-format libllvm-dev curl \
 	neovim nodejs nasm ocaml \
   vulkan-sdk autoconf libtool \
   gcc-multilib g++-multilib \
@@ -46,7 +46,7 @@ git clone https://github.com/atkurtul/dotfiles
 cd dotfiles
 
 
-curl -sLf https://spacevim.org/install.sh | bash
+#curl -sLf https://spacevim.org/install.sh | bash
 curl https://sh.rustup.rs -sSf | sh -s -- -y
 #~/.cargo/bin/cargo install alacritty
 #sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator ~/.cargo/bin/alacritty 100
