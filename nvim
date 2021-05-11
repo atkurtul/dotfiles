@@ -9,7 +9,7 @@ nmap <leader>q :NextColorScheme<CR>:colorscheme<CR>
 nmap <leader>e :PrevColorScheme<CR>:colorscheme<CR>
 nmap <leader>r :RandomColorScheme<CR>:colorscheme<CR>
 
-nmap <C-i>   :RustFmt<CR>:%s/  / /g<CR>:nohl<CR>
+nmap <C-u> :RustFmt<CR>:%s/    /  /g<CR>:nohl<CR><C-o>
 nmap <C-w>p :vsp ~/.config/nvim/init.vim<CR>
 nmap <C-w>[ :vsp ~/.SpaceVim.d/init.toml<CR>
 nmap <C-w>] :vsp ~/.alacritty.yml<CR>
@@ -27,8 +27,8 @@ nmap <C-j> 4j
 nmap <C-k> 4k
 nmap <C-l> w
 
-noremap! <C-BS> <C-w>
-noremap! <C-h> <C-w>
+"noremap! <C-BS> <C-w>
+"noremap! <C-h> <C-w>
 imap <C-Del> X<Esc>dwi
 nmap <C-Del> X<Esc>dw
 
@@ -49,8 +49,8 @@ nmap <leader>3 :vertical resize -5<CR>
 syntax on
 set guioptions=
 set guicursor=
-set termguicolors
-set cursorline
+"set termguicolors
+"set cursorline
 set relativenumber
 set number
 set noerrorbells
@@ -82,7 +82,6 @@ Plug 'francoiscabrol/ranger.vim'
 Plug 'timonv/vim-cargo'
 Plug 'rust-lang/rust.vim'
 Plug 'voldikss/vim-floaterm'
-
 "Plug 'atkurtul/color_coded'
 Plug 'tomasiser/vim-code-dark'
 Plug 'voldikss/vim-floaterm'
@@ -96,6 +95,7 @@ Plug 'xolox/vim-colorscheme-switcher'
 call plug#end()
 
 "colorscheme gruvbox
+colorscheme gruvbox
 
 let g:airline#extensions#tabline#enabled = 1
 let g:floaterm_autoclose=2
@@ -103,3 +103,14 @@ let g:cmake_project_generator="Ninja"
 let g:asmsyntax = 'nasm'
 autocmd BufEnter *.s :setlocal filetype=nasm
 
+
+nmap <C-M> :redir! > ~/map<CR> :map<CR><S-G>G :redir END<CR>
+
+
+function! Dump()
+  redir! > ~/map
+  :map<CR><S-G>
+  redir END
+endfunction
+
+autocmd filetype rust nmap <C-g> :CargoRun<CR>

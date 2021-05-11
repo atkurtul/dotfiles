@@ -30,9 +30,11 @@ sub rexpr {
 }
 
 $x = rstr 1;
-$i=0;
+$i = 0;
 while($i++ < @ARGV[0]){
   $x=rexpr$x;
 }
 
 print "$x\n";
+
+
