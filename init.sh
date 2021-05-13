@@ -8,7 +8,6 @@ export LS_COLORS="$LS_COLORS:ow=0;34:"
 export PATH="$PATH:~/.local/bin"
 export PATH="$PATH:~/dotfiles/scripts"
 
-
 export VISUAL=nvim
 export EDITOR=nvim
 
@@ -44,3 +43,8 @@ function dumpcolor() {
 function listpkg() {
   comm -23 <(apt-mark showmanual | sort -u) <(gzip -dc /var/log/installer/initial-status.gz | sed -n 's/^Package: //p' | sort -u)
 }
+
+function jflap() {
+    java -jar  ~/JFLAP7.1.jar &
+}
+

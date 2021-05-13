@@ -1571,7 +1571,7 @@ vscode: &vscode
 #colors: *tokyo-night
 #colors: *tokyo-night-storm
 #colors: *solarized_dark
-colors: *blood_moon
+#colors: *blood_moon
 #colors: *Cobalt2
 #colors: *dark
 #colors: *gruvbox_light
