@@ -5,34 +5,49 @@ if(!(@ARGV[0])) {
   exit;
 }
 
-$cap="?:";
+# $cap="?:";
 
 if (@ARGV[1] eq "-c") {
   $cap="";
 }
 
-my @set = ('0' ..'9', 'A' .. 'Z', 'a'..'z');
+my @set = ('0' ..'9', 'A' .. 'Z', 'a'..'z', '_');
 sub rstr {
   (my $len) = @_;
-  my $str = join '' => map $set[rand @set], 1 .. $len;
+  my $str = join '' => map $set[rand @set], 1.. $len;
 }
 
+$q = 0;
+$len = 2;
 sub rexpr {
-  (my $l) = @_;
-  my $r = rstr 1;
+  (my $l, my $len) = @_;
+  my $r = rstr $len;
   my $n = int(rand 6);
+
+
+
   if(0 == $n){ return "$l$r";  } # cat
+  # if(1 == $n){ return "($cap$l+)"; }   # +
+
+  if ($q == 1) {
+    $q = 0;
+    if(1 == $n){ return "($cap$l+)"; }   # +
+    if(2 == $n){ return "($cap$l*)"; } # *
+    if(3 == $n){ return "($cap$l?)"; } # ?
+  } else {
+    $q = 1;
+    # if(4 > $n) { return "$l$r"; }
+  }
+
   if(4 <= $n){ return "($cap$l|$r)"; } # |
-  if(1 == $n){ return "($cap$l+)"; }   # +
-  if(2 == $n){ return "($cap$l*)"; } # *
-  if(3 == $n){ return "($cap$l?)"; } # ?
+  
   return $l;
 }
 
-$x = rstr 1;
+$x = rstr $len;
 $i = 0;
 while($i++ < @ARGV[0]){
-  $x=rexpr$x;
+  $x=rexpr$x,$len;
 }
 
 print "$x\n";

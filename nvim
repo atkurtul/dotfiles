@@ -11,8 +11,7 @@ nmap <leader>r :RandomColorScheme<CR>:colorscheme<CR>
 
 nmap <C-u> :RustFmt<CR>:%s/    /  /g<CR>:nohl<CR><C-o>
 nmap <C-w>p :vsp ~/.config/nvim/init.vim<CR>
-nmap <C-w>[ :vsp ~/.SpaceVim.d/init.toml<CR>
-nmap <C-w>] :vsp ~/.alacritty.yml<CR>
+nmap <C-w>[ :vsp ~/.alacritty.yml<CR>
 
 imap <C-h> <Left>
 imap <C-j> <Down>
@@ -35,24 +34,23 @@ nmap <C-Del> X<Esc>dw
 nmap <silent><C-e> <Plug>(coc-definition)
 imap <silent><C-e> <ESC><C-e>
 
-nmap <C-w>t :vsp<CR>:wincmd l<CR>:term<CR>i
-nmap <C-w>e :vsp<CR>:wincmd l<CR>:Explore<CR>
-
-
+"nmap <C-w>t :vsp<CR>:wincmd l<CR>:term<CR>i
+"nmap <C-w>e :vsp<CR>:wincmd l<CR>:Explore<CR>
+nmap <C-w>e :vsp<CR>:wincmd l<CR>:RangerCurrentDirectory<CR>
 nmap <C-w>t :FloatermToggle <CR>
 imap <C-w>t <ESC><C-w>t
 tmap <C-w>t <ESC><C-w>t
 
-nmap <leader>4 :vertical resize +5<CR>
-nmap <leader>3 :vertical resize -5<CR>
+"nmap <leader>4 :vertical resize +5<CR>
+"nmap <leader>3 :vertical resize -5<CR>
 
 syntax on
 set guioptions=
-set guicursor=
-"set termguicolors
-"set cursorline
-set relativenumber
-set number
+"set guicursor=
+set termguicolors
+set cursorline
+"set relativenumber
+"set number
 set noerrorbells
 set tabstop=2 softtabstop=2
 set shiftwidth=2
@@ -67,7 +65,7 @@ set incsearch
 set signcolumn=yes
 set scrolloff=2
 set updatetime=200
-set timeout timeoutlen=250
+set timeout timeoutlen=450
 
 
 call plug#begin('~/.vim/plugged')
@@ -92,11 +90,9 @@ Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'bash install.sh
 Plug 'junegunn/fzf'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-colorscheme-switcher'
-
 call plug#end()
 
-"colorscheme gruvbox
-colorscheme gruvbox
+colorscheme solarized8_dark_high
 
 let g:airline#extensions#tabline#enabled = 1
 let g:floaterm_autoclose=2

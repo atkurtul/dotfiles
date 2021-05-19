@@ -45,6 +45,6 @@ function listpkg() {
 }
 
 function jflap() {
-    java -jar  ~/JFLAP7.1.jar &
+    java -jar  ~/Desktop/JFLAP7.1.jar $@ &
 }
 

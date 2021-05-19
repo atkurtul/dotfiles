@@ -1,5 +1,5 @@
 font:
-  size: 14
+ size: 12
 
 schemes:
   # Tokyo Night theme, based on both:
@@ -1568,9 +1568,53 @@ vscode: &vscode
     white:   '#e5e5e5'
 
 
+themer-dark: &themer-dark
+    primary:
+      background: '#222323'
+      foreground: '#c2c2c2'
+
+    cursor:
+      text: '#222323'
+      cursor: '#a550a7'
+
+    selection:
+      text: '#222323'
+      background: '#007aff'
+
+    normal:
+      black: '#575858'
+      red: '#ff5257'
+      green: '#62ba46'
+      yellow: '#fbb927'
+      blue: '#007aff'
+      magenta: '#f74f9e'
+      cyan: '#00c7a3'
+      white: '#c2c2c2'
+
+    bright:
+      black: '#727373'
+      red: '#F86E72'
+      green: '#7BC164'
+      yellow: '#F5C04B'
+      blue: '#2C8EF8'
+      magenta: '#F26BAB'
+      cyan: '#2CCBAF'
+      white: '#dddddd'
+
+    dim:
+      black: '#3d3e3e'
+      red: '#D3494D'
+      green: '#559C3F'
+      yellow: '#D09B26'
+      blue: '#0769D3'
+      magenta: '#CC4685'
+      cyan: '#07A689'
+      white: '#a8a8a8'
+  
+
 #colors: *tokyo-night
 #colors: *tokyo-night-storm
-#colors: *solarized_dark
+colors: *solarized_dark
 #colors: *blood_moon
 #colors: *Cobalt2
 #colors: *dark
@@ -1616,3 +1660,4 @@ vscode: &vscode
 #colors: *storm
 #colors: *gotham
 #colors: *vscode
+#colors: *themer-dark
