@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-
+##
 dotdir="$HOME/dotfiles"
 
 if [[ ! -z $1 ]]; then
