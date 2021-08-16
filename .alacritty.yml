@@ -1614,7 +1614,7 @@ themer-dark: &themer-dark
 
 #colors: *tokyo-night
 #colors: *tokyo-night-storm
-colors: *solarized_dark
+#colors: *solarized_dark
 #colors: *blood_moon
 #colors: *Cobalt2
 #colors: *dark
@@ -1648,7 +1648,7 @@ colors: *solarized_dark
 #colors: *thelovelace
 #colors: *argonaut
 #colors: *oceanic_next
-#colors: *gruvbox_dark
+colors: *gruvbox_dark
 #colors: *tender
 #colors: *falcon
 #colors: *remedy_dark
